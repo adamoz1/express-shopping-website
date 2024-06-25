@@ -1,10 +1,9 @@
-const asyncHandler = require('express-async-handler')
-const Users = require('../models/userModel')
-const CryptoJS = require('crypto-js')
 const jwt = require('jsonwebtoken')
+const CryptoJS = require('crypto-js')
+const Users = require('../models/userModel')
 const { Cart } = require("../models/cartModel");
+const asyncHandler = require('express-async-handler')
 
-//To Register a User
 userRegister = asyncHandler(async(req,res)=>{
     console.log(req.body);
     const { username, email, password, isAdmin } = req.body
@@ -38,7 +37,6 @@ userRegister = asyncHandler(async(req,res)=>{
     
 })
 
-//To Login using existing Users
 loginUser = asyncHandler(async(req,res)=>{
     const { email, password } = req.body
     console.log(req.body);
